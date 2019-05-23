@@ -28,12 +28,9 @@ describe('SignUpForm renders', () => {
       });
 
       test('uses a NameField component', () => {
-        expect(
-          wrapper
-            .find({ name: 'name' })
-            .prop('component')
-            .is(NameField)
-        ).toEqual(true);
+        expect(wrapper.find({ name: 'name' }).prop('component')).toEqual(
+          NameField
+        );
       });
     });
   });
