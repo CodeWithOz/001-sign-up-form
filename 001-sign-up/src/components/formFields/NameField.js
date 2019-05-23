@@ -1,10 +1,10 @@
 import React from 'react';
 import GenericInput from './GenericInput';
 
-export default function NameField() {
+export default function NameField(props) {
   return (
     <div>
-      <GenericInput />
+      <GenericInput {...props} />
     </div>
   );
 }
