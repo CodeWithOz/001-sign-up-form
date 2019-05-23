@@ -4,8 +4,8 @@ import BgImgContainer from './BgImgContainer';
 
 describe('BgImgContainer renders', () => {
   test(`its 'children' prop`, () => {
-    const children = 'test';
-    const wrapper = shallow(<BgImgContainer children={children} />);
-    expect(wrapper.children()).toEqual(children);
+    const children = <div>test</div>;
+    const wrapper = shallow(<BgImgContainer>{children}</BgImgContainer>);
+    expect(wrapper.find('div').length).toEqual(1);
   });
 });
