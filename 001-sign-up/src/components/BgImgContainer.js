@@ -1,5 +1,7 @@
 import React from 'react';
 
 export default function BgImgContainer() {
-  return <div>Background image container</div>;
+  return (
+    <section className="bg-img-container">Background image container</section>
+  );
 }
