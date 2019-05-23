@@ -1,5 +1,10 @@
 import React from 'react';
+import BgImgContainer from './BgImgContainer';
 
 export default function App() {
-  return <div>App</div>;
+  return (
+    <main>
+      <BgImgContainer />
+    </main>
+  );
 }
