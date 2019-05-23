@@ -14,6 +14,11 @@ describe('NameField correctly passes', () => {
   test('all its props to its GenericInput', () => {
     const props = { test: 'value', test2: 'value2' };
     const wrapper = shallow(<NameField {...props} />);
-    expect(wrapper.find(GenericInput).props()).toEqual(props);
+    const genWrapper = wrapper.find(GenericInput);
+    for (const prop in props) {
+      if (props.hasOwnProperty(prop)) {
+        expect(genWrapper.prop(prop)).toEqual(props[prop]);
+      }
+    }
   });
 });
