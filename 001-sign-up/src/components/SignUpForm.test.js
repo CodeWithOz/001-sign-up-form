@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Field } from 'redux-form';
-import SignUpForm from './SignUpForm';
+import { SignUpForm } from './SignUpForm';
 
 describe('SignUpForm renders', () => {
   test('a form element', () => {
