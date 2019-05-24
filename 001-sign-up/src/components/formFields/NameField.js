@@ -2,11 +2,14 @@ import React from 'react';
 import GenericInput from './GenericInput';
 
 const nameFieldConfig = {
-  placeholder: 'Uche Ozoemena'
+  customProps: {
+    placeholder: 'Uche Ozoemena',
+    type: 'text'
+  }
 };
 
 export default function NameField(props) {
-  const newProps = { ...props, placeholder: nameFieldConfig.placeholder };
+  const newProps = { ...props, ...nameFieldConfig.customProps };
 
   return (
     <div>
