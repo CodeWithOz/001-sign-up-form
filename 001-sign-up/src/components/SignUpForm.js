@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import NameField from './formFields/NameField';
 import EmailField from './formFields/EmailField';
@@ -26,19 +26,21 @@ const signUpFormConfig = {
   }
 };
 
-export function SignUpForm() {
-  const { fields, buttonProps } = signUpFormConfig;
+export class SignUpForm extends Component {
+  render() {
+    const { fields, buttonProps } = signUpFormConfig;
 
-  const formFields = fields.map(({ name, component }, index) => (
-    <Field name={name} key={index} component={component} />
-  ));
+    const formFields = fields.map(({ name, component }, index) => (
+      <Field name={name} key={index} component={component} />
+    ));
 
-  return (
-    <form className="SignUpForm">
-      {formFields}
-      <Button {...buttonProps} />
-    </form>
-  );
+    return (
+      <form className="SignUpForm">
+        {formFields}
+        <Button {...buttonProps} />
+      </form>
+    );
+  }
 }
 
 export default reduxForm({
