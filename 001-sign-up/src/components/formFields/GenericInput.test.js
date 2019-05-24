@@ -15,4 +15,10 @@ describe('GenericInput correctly passes', () => {
     const wrapper = shallow(<GenericInput input={inputProps} />);
     expect(wrapper.find('input').props()).toEqual(inputProps);
   });
+
+  test(`its 'placeholder' prop to the input element`, () => {
+    const placeholder = 'test';
+    const wrapper = shallow(<GenericInput placeholder={placeholder} />);
+    expect(wrapper.find('input').prop('placeholder')).toEqual(placeholder);
+  });
 });
