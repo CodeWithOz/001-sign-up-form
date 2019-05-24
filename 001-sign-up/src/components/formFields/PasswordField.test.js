@@ -44,4 +44,10 @@ describe('PasswordField correctly passes', () => {
       expect.any(Boolean)
     );
   });
+
+  test('an id prop to its GenericInput', () => {
+    const wrapper = shallow(<PasswordField />);
+    expect(wrapper.find(GenericInput).prop('id')).toEqual(expect.any(String));
+    expect(wrapper.find(GenericInput).prop('id').length).toBeGreaterThan(0);
+  });
 });
