@@ -52,5 +52,19 @@ describe('SignUpForm renders', () => {
         );
       });
     });
+
+    describe(`a 'password' field that`, () => {
+      test('is a Field', () => {
+        expect(wrapper.find('form').find({ name: 'password' }).length).toEqual(
+          1
+        );
+        expect(
+          wrapper
+            .find('form')
+            .find({ name: 'password' })
+            .is(Field)
+        ).toEqual(true);
+      });
+    });
   });
 });
