@@ -19,7 +19,10 @@ const signUpFormConfig = {
       name: 'password',
       component: PasswordField
     }
-  ]
+  ],
+  button: {
+    text: 'log in'
+  }
 };
 
 export function SignUpForm() {
@@ -30,7 +33,7 @@ export function SignUpForm() {
   return (
     <form className="SignUpForm">
       {fields}
-      <Button />
+      <Button text={signUpFormConfig.button.text} />
     </form>
   );
 }
