@@ -8,8 +8,8 @@ export default function GenericInput({ input, meta, ...customProps }) {
 
   return (
     <div className="generic-input">
-      <label htmlFor={customProps.id} data-label-indicator={labelIndicator} />
       <input {...input} {...forInput} />
+      <label htmlFor={customProps.id} data-label-indicator={labelIndicator} />
     </div>
   );
 }
