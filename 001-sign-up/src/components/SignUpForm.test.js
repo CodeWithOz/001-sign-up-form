@@ -87,4 +87,10 @@ describe('SignUpForm correctly passes', () => {
     const wrapper = shallow(<SignUpForm />);
     expect(wrapper.find(Button).prop('text')).toEqual(btnText);
   });
+
+  test('icon prop to Button', () => {
+    const btnIcon = '\uf054'; // font awesome's chevron-right
+    const wrapper = shallow(<SignUpForm />);
+    expect(wrapper.find(Button).prop('icon')).toEqual(btnIcon);
+  });
 });
