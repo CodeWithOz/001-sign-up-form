@@ -12,6 +12,10 @@ const signUpFormConfig = {
     {
       name: 'email',
       component: EmailField
+    },
+    {
+      name: 'password',
+      component: () => <div>Dummy component</div>
     }
   ]
 };
