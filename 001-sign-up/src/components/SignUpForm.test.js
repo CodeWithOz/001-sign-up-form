@@ -4,6 +4,7 @@ import { Field } from 'redux-form';
 import { SignUpForm } from './SignUpForm';
 import NameField from './formFields/NameField';
 import EmailField from './formFields/EmailField';
+import PasswordField from './formFields/PasswordField';
 
 describe('SignUpForm renders', () => {
   let wrapper;
@@ -64,6 +65,12 @@ describe('SignUpForm renders', () => {
             .find({ name: 'password' })
             .is(Field)
         ).toEqual(true);
+      });
+
+      test('uses an PasswordField component', () => {
+        expect(wrapper.find({ name: 'password' }).prop('component')).toEqual(
+          PasswordField
+        );
       });
     });
   });
