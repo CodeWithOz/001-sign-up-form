@@ -6,6 +6,7 @@ export function SignUpForm() {
   return (
     <form className="sign-up-form">
       <Field name="name" component={NameField} />
+      <Field name="email" component={NameField} />
     </form>
   );
 }
