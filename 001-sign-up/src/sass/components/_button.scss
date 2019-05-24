@@ -9,4 +9,13 @@
   text-align: left;
   text-transform: uppercase;
   width: 100%;
+
+  &:focus,
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
 }
