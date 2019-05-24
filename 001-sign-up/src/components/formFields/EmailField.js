@@ -4,7 +4,7 @@ import GenericInput from './GenericInput';
 const emailFieldConfig = {
   customProps: {
     id: 'email',
-    placeholder: 'Uche Ozoemena',
+    placeholder: 'example@mail.com',
     required: true,
     type: 'email'
   }
