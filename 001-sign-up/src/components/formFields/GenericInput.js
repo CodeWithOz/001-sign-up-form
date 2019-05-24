@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 
 // this component receives some props from redux-form so I won't
 // specify them in the prop types
-export default function GenericInput({ input, placeholder }) {
-  return <input {...input} placeholder={placeholder} />;
+export default function GenericInput({ input, meta, ...customProps }) {
+  return <input {...input} {...customProps} />;
 }
 
 GenericInput.propTypes = {
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
+  type: PropTypes.string
 };
