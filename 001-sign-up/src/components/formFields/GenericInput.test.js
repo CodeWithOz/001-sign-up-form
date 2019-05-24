@@ -44,4 +44,12 @@ describe('GenericInput correctly passes', () => {
     const wrapper = shallow(<GenericInput id={id} />);
     expect(wrapper.find('input').prop('id')).toEqual(id);
   });
+
+  test(`its 'labelIndicator' prop to the label element`, () => {
+    const labelIndicator = 'test';
+    const wrapper = shallow(<GenericInput labelIndicator={labelIndicator} />);
+    expect(wrapper.find('label').prop('data-label-indicator')).toEqual(
+      labelIndicator
+    );
+  });
 });
