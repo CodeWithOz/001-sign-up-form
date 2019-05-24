@@ -7,6 +7,11 @@ describe('GenericInput renders', () => {
     const wrapper = shallow(<GenericInput />);
     expect(wrapper.find('input').length).toEqual(1);
   });
+
+  test('a label element', () => {
+    const wrapper = shallow(<GenericInput />);
+    expect(wrapper.find('label').length).toEqual(1);
+  });
 });
 
 describe('GenericInput correctly passes', () => {
