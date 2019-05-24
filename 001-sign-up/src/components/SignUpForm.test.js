@@ -33,5 +33,17 @@ describe('SignUpForm renders', () => {
         );
       });
     });
+
+    describe(`an 'email' field that`, () => {
+      test('is a Field', () => {
+        expect(wrapper.find('form').find({ name: 'email' }).length).toEqual(1);
+        expect(
+          wrapper
+            .find('form')
+            .find({ name: 'email' })
+            .is(Field)
+        ).toEqual(true);
+      });
+    });
   });
 });
