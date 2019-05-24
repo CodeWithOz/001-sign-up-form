@@ -3,6 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import NameField from './formFields/NameField';
 import EmailField from './formFields/EmailField';
 import PasswordField from './formFields/PasswordField';
+import Button from './Button';
 
 const signUpFormConfig = {
   fields: [
@@ -26,7 +27,12 @@ export function SignUpForm() {
     <Field name={name} key={index} component={component} />
   ));
 
-  return <form className="sign-up-form">{fields}</form>;
+  return (
+    <form className="sign-up-form">
+      {fields}
+      <Button />
+    </form>
+  );
 }
 
 export default reduxForm({
