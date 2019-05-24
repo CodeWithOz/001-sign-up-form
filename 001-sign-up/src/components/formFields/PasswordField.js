@@ -3,7 +3,8 @@ import GenericInput from './GenericInput';
 
 const passwordFieldConfig = {
   customProps: {
-    placeholder: 'password'
+    placeholder: 'password',
+    type: 'password'
   }
 };
 
