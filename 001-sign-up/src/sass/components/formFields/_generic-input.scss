@@ -1,5 +1,6 @@
 .generic-input {
   label::before {
     content: attr(data-label-indicator);
+    font-family: 'Font Awesome\ 5 Free';
   }
 }

@@ -4,7 +4,7 @@ import GenericInput from './GenericInput';
 const nameFieldConfig = {
   customProps: {
     id: 'name',
-    labelIndicator: '\f007',
+    labelIndicator: '\uf007',
     placeholder: 'Uche Ozoemena',
     required: true,
     type: 'text'
