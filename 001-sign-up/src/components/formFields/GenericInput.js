@@ -4,10 +4,12 @@ import PropTypes from 'prop-types';
 // this component receives some props from redux-form so I won't
 // specify them in the prop types
 export default function GenericInput({ input, meta, ...customProps }) {
+  const { labelIndicator, ...forInput } = customProps;
+
   return (
     <div>
-      <label htmlFor={customProps.id} />
-      <input {...input} {...customProps} />
+      <label htmlFor={customProps.id} data-label-indicator={labelIndicator} />
+      <input {...input} {...forInput} />
     </div>
   );
 }
