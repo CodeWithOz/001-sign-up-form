@@ -3,6 +3,7 @@ import GenericInput from './GenericInput';
 
 const nameFieldConfig = {
   customProps: {
+    id: 'name',
     placeholder: 'Uche Ozoemena',
     required: true,
     type: 'text'
