@@ -28,7 +28,7 @@ export function SignUpForm() {
   ));
 
   return (
-    <form className="sign-up-form">
+    <form className="SignUpForm">
       {fields}
       <Button />
     </form>
