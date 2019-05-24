@@ -21,4 +21,14 @@ describe('NameField correctly passes', () => {
       }
     }
   });
+
+  test('a placeholder prop to its GenericInput', () => {
+    const wrapper = shallow(<NameField />);
+    expect(wrapper.find(GenericInput).prop('placeholder')).toEqual(
+      expect.any(String)
+    );
+    expect(
+      wrapper.find(GenericInput).prop('placeholder').length
+    ).toBeGreaterThan(0);
+  });
 });
