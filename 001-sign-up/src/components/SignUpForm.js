@@ -4,7 +4,7 @@ import NameField from './formFields/NameField';
 
 export function SignUpForm() {
   return (
-    <form>
+    <form className="sign-up-form">
       <Field name="name" component={NameField} />
     </form>
   );
