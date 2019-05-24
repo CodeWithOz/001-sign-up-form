@@ -4,6 +4,7 @@ import GenericInput from './GenericInput';
 const passwordFieldConfig = {
   customProps: {
     id: 'password',
+    labelIndicator: '\uf023',
     placeholder: 'password',
     required: true,
     type: 'password'
