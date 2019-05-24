@@ -3,7 +3,8 @@ import GenericInput from './GenericInput';
 
 const emailFieldConfig = {
   customProps: {
-    placeholder: 'Uche Ozoemena'
+    placeholder: 'Uche Ozoemena',
+    type: 'email'
   }
 };
 
