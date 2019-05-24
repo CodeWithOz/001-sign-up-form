@@ -4,6 +4,7 @@ import GenericInput from './GenericInput';
 const emailFieldConfig = {
   customProps: {
     placeholder: 'Uche Ozoemena',
+    required: true,
     type: 'email'
   }
 };
