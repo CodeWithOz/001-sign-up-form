@@ -37,4 +37,11 @@ describe('EmailField correctly passes', () => {
     expect(wrapper.find(GenericInput).prop('type')).toEqual(expect.any(String));
     expect(wrapper.find(GenericInput).prop('type').length).toBeGreaterThan(0);
   });
+
+  test('a required prop to its GenericInput', () => {
+    const wrapper = shallow(<EmailField />);
+    expect(wrapper.find(GenericInput).prop('required')).toEqual(
+      expect.any(Boolean)
+    );
+  });
 });
