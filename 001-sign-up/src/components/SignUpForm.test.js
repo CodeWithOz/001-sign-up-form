@@ -80,3 +80,11 @@ describe('SignUpForm renders', () => {
     });
   });
 });
+
+describe('SignUpForm correctly passes', () => {
+  test('text prop to Button', () => {
+    const btnText = 'log in';
+    const wrapper = shallow(<SignUpForm />);
+    expect(wrapper.find(Button).prop('text')).toEqual(btnText);
+  });
+});
