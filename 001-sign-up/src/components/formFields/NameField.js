@@ -13,9 +13,5 @@ const nameFieldConfig = {
 export default function NameField(props) {
   const newProps = { ...props, ...nameFieldConfig.customProps };
 
-  return (
-    <div>
-      <GenericInput {...newProps} />
-    </div>
-  );
+  return <GenericInput {...newProps} />;
 }
