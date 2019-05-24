@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import NameField from './formFields/NameField';
+import EmailField from './formFields/EmailField';
 
 const signUpFormConfig = {
   fields: [
@@ -10,7 +11,7 @@ const signUpFormConfig = {
     },
     {
       name: 'email',
-      component: () => <div>Dummy component</div>
+      component: EmailField
     }
   ]
 };
