@@ -7,7 +7,7 @@ export default function GenericInput({ input, meta, ...customProps }) {
   const { labelIndicator, ...forInput } = customProps;
 
   return (
-    <div>
+    <div className="generic-input">
       <label htmlFor={customProps.id} data-label-indicator={labelIndicator} />
       <input {...input} {...forInput} />
     </div>

@@ -1,0 +1,5 @@
+.generic-input {
+  label::before {
+    content: attr(data-label-indicator);
+  }
+}
