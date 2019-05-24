@@ -7,4 +7,10 @@ describe('Button renders', () => {
     const wrapper = shallow(<Button />);
     expect(wrapper.find('button').length).toEqual(1);
   });
+
+  test(`its 'text' prop`, () => {
+    const text = 'test';
+    const wrapper = shallow(<Button text={text} />);
+    expect(wrapper.text()).toContain(text);
+  });
 });
