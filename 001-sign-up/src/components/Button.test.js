@@ -14,3 +14,11 @@ describe('Button renders', () => {
     expect(wrapper.text()).toContain(text);
   });
 });
+
+describe('Button correctly passes', () => {
+  test(`its icon 'prop' to its button as data-icon`, () => {
+    const icon = 'test';
+    const wrapper = shallow(<Button icon={icon} />);
+    expect(wrapper.find('button').prop('data-icon')).toEqual(icon);
+  });
+});
