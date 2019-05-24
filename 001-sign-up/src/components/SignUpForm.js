@@ -20,17 +20,14 @@ const signUpFormConfig = {
       component: PasswordField
     }
   ],
-  button: {
+  buttonProps: {
     icon: '\uf054',
     text: 'log in'
   }
 };
 
 export function SignUpForm() {
-  const {
-    fields,
-    button: { icon, text }
-  } = signUpFormConfig;
+  const { fields, buttonProps } = signUpFormConfig;
 
   const formFields = fields.map(({ name, component }, index) => (
     <Field name={name} key={index} component={component} />
@@ -39,7 +36,7 @@ export function SignUpForm() {
   return (
     <form className="SignUpForm">
       {formFields}
-      <Button icon={icon} text={text} />
+      <Button {...buttonProps} />
     </form>
   );
 }
