@@ -26,14 +26,19 @@ const signUpFormConfig = {
 };
 
 export function SignUpForm() {
-  const fields = signUpFormConfig.fields.map(({ name, component }, index) => (
+  const {
+    fields,
+    button: { text }
+  } = signUpFormConfig;
+
+  const formFields = fields.map(({ name, component }, index) => (
     <Field name={name} key={index} component={component} />
   ));
 
   return (
     <form className="SignUpForm">
-      {fields}
-      <Button text={signUpFormConfig.button.text} />
+      {formFields}
+      <Button text={text} />
     </form>
   );
 }
