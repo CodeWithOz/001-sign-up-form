@@ -9,5 +9,6 @@ export default function GenericInput({ input, meta, ...customProps }) {
 
 GenericInput.propTypes = {
   placeholder: PropTypes.string,
+  required: PropTypes.bool,
   type: PropTypes.string
 };
