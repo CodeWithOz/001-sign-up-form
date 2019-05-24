@@ -33,4 +33,10 @@ describe('GenericInput correctly passes', () => {
     const wrapper = shallow(<GenericInput required={required} />);
     expect(wrapper.find('input').prop('required')).toEqual(required);
   });
+
+  test(`its 'id' prop to the input element`, () => {
+    const id = true;
+    const wrapper = shallow(<GenericInput id={id} />);
+    expect(wrapper.find('input').prop('id')).toEqual(id);
+  });
 });
