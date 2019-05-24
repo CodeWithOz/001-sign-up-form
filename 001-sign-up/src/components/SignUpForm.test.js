@@ -5,6 +5,7 @@ import { SignUpForm } from './SignUpForm';
 import NameField from './formFields/NameField';
 import EmailField from './formFields/EmailField';
 import PasswordField from './formFields/PasswordField';
+import Button from './Button';
 
 describe('SignUpForm renders', () => {
   let wrapper;
@@ -72,6 +73,10 @@ describe('SignUpForm renders', () => {
           PasswordField
         );
       });
+    });
+
+    test('a Button', () => {
+      expect(wrapper.find(Button).length).toEqual(1);
     });
   });
 });
