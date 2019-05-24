@@ -21,6 +21,7 @@ const signUpFormConfig = {
     }
   ],
   button: {
+    icon: '\uf054',
     text: 'log in'
   }
 };
@@ -28,7 +29,7 @@ const signUpFormConfig = {
 export function SignUpForm() {
   const {
     fields,
-    button: { text }
+    button: { icon, text }
   } = signUpFormConfig;
 
   const formFields = fields.map(({ name, component }, index) => (
@@ -38,7 +39,7 @@ export function SignUpForm() {
   return (
     <form className="SignUpForm">
       {formFields}
-      <Button text={text} />
+      <Button icon={icon} text={text} />
     </form>
   );
 }
