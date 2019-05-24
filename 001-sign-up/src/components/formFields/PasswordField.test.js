@@ -50,4 +50,14 @@ describe('PasswordField correctly passes', () => {
     expect(wrapper.find(GenericInput).prop('id')).toEqual(expect.any(String));
     expect(wrapper.find(GenericInput).prop('id').length).toBeGreaterThan(0);
   });
+
+  test('a labelIndicator prop to its GenericInput', () => {
+    const wrapper = shallow(<PasswordField />);
+    expect(wrapper.find(GenericInput).prop('labelIndicator')).toEqual(
+      expect.any(String)
+    );
+    expect(
+      wrapper.find(GenericInput).prop('labelIndicator').length
+    ).toBeGreaterThan(0);
+  });
 });
