@@ -4,6 +4,7 @@ import GenericInput from './GenericInput';
 const passwordFieldConfig = {
   customProps: {
     placeholder: 'password',
+    required: true,
     type: 'password'
   }
 };
