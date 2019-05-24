@@ -10,7 +10,7 @@ describe('PasswordField renders', () => {
   });
 });
 
-describe('EmailField correctly passes', () => {
+describe('PasswordField correctly passes', () => {
   test('all its props to its GenericInput', () => {
     const props = { test: 'value', test2: 'value2' };
     const wrapper = shallow(<PasswordField {...props} />);
@@ -30,5 +30,11 @@ describe('EmailField correctly passes', () => {
     expect(
       wrapper.find(GenericInput).prop('placeholder').length
     ).toBeGreaterThan(0);
+  });
+
+  test('a type prop to its GenericInput', () => {
+    const wrapper = shallow(<PasswordField />);
+    expect(wrapper.find(GenericInput).prop('type')).toEqual(expect.any(String));
+    expect(wrapper.find(GenericInput).prop('type').length).toBeGreaterThan(0);
   });
 });
