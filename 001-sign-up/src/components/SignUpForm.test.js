@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import { Field } from 'redux-form';
 import { SignUpForm } from './SignUpForm';
 import NameField from './formFields/NameField';
+import EmailField from './formFields/EmailField';
 
 describe('SignUpForm renders', () => {
   let wrapper;
@@ -43,6 +44,12 @@ describe('SignUpForm renders', () => {
             .find({ name: 'email' })
             .is(Field)
         ).toEqual(true);
+      });
+
+      test('uses an EmailField component', () => {
+        expect(wrapper.find({ name: 'email' }).prop('component')).toEqual(
+          EmailField
+        );
       });
     });
   });
