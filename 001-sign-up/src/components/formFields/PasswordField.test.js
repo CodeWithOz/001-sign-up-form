@@ -21,4 +21,14 @@ describe('EmailField correctly passes', () => {
       }
     }
   });
+
+  test('a placeholder prop to its GenericInput', () => {
+    const wrapper = shallow(<PasswordField />);
+    expect(wrapper.find(GenericInput).prop('placeholder')).toEqual(
+      expect.any(String)
+    );
+    expect(
+      wrapper.find(GenericInput).prop('placeholder').length
+    ).toBeGreaterThan(0);
+  });
 });
