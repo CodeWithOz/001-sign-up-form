@@ -1,6 +1,14 @@
 import React from 'react';
 import GenericInput from './GenericInput';
 
+const passwordFieldConfig = {
+  customProps: {
+    placeholder: 'password'
+  }
+};
+
 export default function PasswordField(props) {
-  return <GenericInput {...props} />;
+  const newProps = { ...props, ...passwordFieldConfig.customProps };
+
+  return <GenericInput {...newProps} />;
 }
