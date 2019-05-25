@@ -95,9 +95,12 @@ describe('SignUpForm correctly passes', () => {
   });
 
   test(`its handleSubmit method to its 'form' element`, () => {
+    const handleSubmitSpy = jest.spyOn(SignUpForm.prototype, 'handleSubmit');
     const wrapper = shallow(<SignUpForm />);
-    const handleSubmitSpy = jest.spyOn(wrapper.instance(), 'handleSubmit');
-    expect(wrapper.find('form').prop('onSubmit')).toBe(handleSubmitSpy);
+    expect(handleSubmitSpy).not.toHaveBeenCalled();
+
+    wrapper.find('form').simulate('submit');
+    expect(handleSubmitSpy).toHaveBeenCalledTimes(1);
 
     handleSubmitSpy.mockRestore();
   });
