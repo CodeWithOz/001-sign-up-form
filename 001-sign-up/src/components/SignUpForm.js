@@ -27,7 +27,20 @@ const signUpFormConfig = {
 };
 
 export class SignUpForm extends Component {
-  handleSubmit() {}
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      submitted: false
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit() {
+    const newSubmittedState = !this.state.submitted;
+    this.setState({ submitted: newSubmittedState });
+  }
 
   render() {
     const { fields, buttonProps } = signUpFormConfig;
@@ -50,7 +63,6 @@ export default reduxForm({
 })(SignUpForm);
 
 // TODO:
-// 2. set submit handler to toggle submitted state
 // 3. change form to Form and use submit handler
 // 4. render Form or post-submit note based on submitted state
 // 5. style post-submit note

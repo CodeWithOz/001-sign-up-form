@@ -104,19 +104,19 @@ describe('SignUpForm exposes', () => {
 
     test(`toggles the 'submitted' state`, () => {
       const wrapper = shallow(<SignUpForm />);
-      const spy = jest.spyOn(SignUpForm.prototype, 'handleSubmit');
-      expect(spy).not.toHaveBeenCalled();
+      const handleSubmitSpy = jest.spyOn(wrapper.instance(), 'handleSubmit');
+      expect(handleSubmitSpy).not.toHaveBeenCalled();
 
       let submittedState = wrapper.state('submitted');
-      wrapper.simulate('submit');
-      expect(spy).toHaveBeenCalledTimes(1);
+      handleSubmitSpy();
       expect(wrapper.state('submitted')).toEqual(!submittedState);
 
       // ensure it toggles in the opposite direction
       submittedState = wrapper.state('submitted'); // updated state
-      wrapper.simulate('submit');
-      expect(spy).toHaveBeenCalledTimes(2);
+      handleSubmitSpy();
       expect(wrapper.state('submitted')).toEqual(!submittedState);
+
+      handleSubmitSpy.mockRestore();
     });
   });
 });
