@@ -50,7 +50,10 @@ export class SignUpForm extends Component {
     ));
 
     return (
-      <form className="SignUpForm" onSubmit={this.handleSubmit}>
+      <form
+        className="SignUpForm"
+        onSubmit={this.props.handleSubmit(this.handleSubmit)}
+      >
         {formFields}
         <Button {...buttonProps} />
       </form>
