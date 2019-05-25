@@ -7,13 +7,18 @@ import EmailField from './formFields/EmailField';
 import PasswordField from './formFields/PasswordField';
 import Button from './Button';
 
+function dummySubmitHandler(myHandler) {
+  myHandler();
+  return myHandler;
+}
+
+let wrapper;
+
+beforeEach(() => {
+  wrapper = shallow(<SignUpForm handleSubmit={dummySubmitHandler} />);
+});
+
 describe('SignUpForm renders', () => {
-  let wrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(<SignUpForm />);
-  });
-
   test('a form element', () => {
     expect(wrapper.find('form').length).toEqual(1);
   });
@@ -84,19 +89,16 @@ describe('SignUpForm renders', () => {
 describe('SignUpForm correctly passes', () => {
   test('text prop to Button', () => {
     const btnText = 'log in';
-    const wrapper = shallow(<SignUpForm />);
     expect(wrapper.find(Button).prop('text')).toEqual(btnText);
   });
 
   test('icon prop to Button', () => {
     const btnIcon = '\uf054'; // font awesome's chevron-right
-    const wrapper = shallow(<SignUpForm />);
     expect(wrapper.find(Button).prop('icon')).toEqual(btnIcon);
   });
 
   test(`its handleSubmit method to its 'form' element`, () => {
-    const handleSubmitSpy = jest.spyOn(SignUpForm.prototype, 'handleSubmit');
-    const wrapper = shallow(<SignUpForm />);
+    const handleSubmitSpy = jest.spyOn(wrapper.instance(), 'handleSubmit');
     expect(handleSubmitSpy).not.toHaveBeenCalled();
 
     wrapper.find('form').simulate('submit');
@@ -114,7 +116,6 @@ describe('SignUpForm exposes', () => {
     });
 
     test(`toggles the 'submitted' state`, () => {
-      const wrapper = shallow(<SignUpForm />);
       const handleSubmitSpy = jest.spyOn(wrapper.instance(), 'handleSubmit');
       expect(handleSubmitSpy).not.toHaveBeenCalled();
 
