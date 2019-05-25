@@ -64,6 +64,3 @@ export class SignUpForm extends Component {
 export default reduxForm({
   form: 'SignUpForm'
 })(SignUpForm);
-
-// TODO:
-// 6. add ReactCSSTransitionGroup
