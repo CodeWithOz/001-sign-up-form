@@ -4,7 +4,8 @@ import { CSSTransitionGroup } from 'react-transition-group';
 
 const bgImgContainerConfig = {
   transitionGroupProps: {
-    transitionName: 'form-submittal'
+    transitionName: 'form-submittal',
+    transitionEnterTimeout: 500
   }
 };
 
