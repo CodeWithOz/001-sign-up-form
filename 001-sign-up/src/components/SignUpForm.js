@@ -27,6 +27,8 @@ const signUpFormConfig = {
 };
 
 export class SignUpForm extends Component {
+  handleSubmit() {}
+
   render() {
     const { fields, buttonProps } = signUpFormConfig;
 
@@ -46,3 +48,10 @@ export class SignUpForm extends Component {
 export default reduxForm({
   form: 'SignUpForm'
 })(SignUpForm);
+
+// TODO:
+// 2. set submit handler to toggle submitted state
+// 3. change form to Form and use submit handler
+// 4. render Form or post-submit note based on submitted state
+// 5. style post-submit note
+// 6. add ReactCSSTransitionGroup
