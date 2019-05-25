@@ -24,6 +24,11 @@ describe('SignUpForm renders', () => {
     expect(wrapper.find('form').length).toEqual(1);
   });
 
+  test('nothing when submitted state is true', () => {
+    wrapper.setState({ submitted: true });
+    expect(wrapper.exists()).toEqual(false);
+  });
+
   describe('a form element containing', () => {
     describe(`a 'name' field that`, () => {
       test('is a Field', () => {
