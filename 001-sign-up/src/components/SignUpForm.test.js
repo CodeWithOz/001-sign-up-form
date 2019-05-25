@@ -7,10 +7,7 @@ import EmailField from './formFields/EmailField';
 import PasswordField from './formFields/PasswordField';
 import Button from './Button';
 
-function dummySubmitHandler(myHandler) {
-  myHandler();
-  return myHandler;
-}
+const dummySubmitHandler = jest.fn();
 
 let wrapper;
 
@@ -104,13 +101,14 @@ describe('SignUpForm correctly passes', () => {
   });
 
   test(`its handleSubmit method to its 'form' element`, () => {
-    const handleSubmitSpy = jest.spyOn(wrapper.instance(), 'handleSubmit');
-    expect(handleSubmitSpy).not.toHaveBeenCalled();
-
     wrapper.find('form').simulate('submit');
-    expect(handleSubmitSpy).toHaveBeenCalledTimes(1);
 
-    handleSubmitSpy.mockRestore();
+    // only check if the submit handler was supplied as an
+    // argument to the handleSubmit prop
+    // because that's how redux-form uses it
+    expect(dummySubmitHandler).toHaveBeenCalledWith(
+      wrapper.instance().handleSubmit
+    );
   });
 });
 
