@@ -94,3 +94,12 @@ describe('SignUpForm correctly passes', () => {
     expect(wrapper.find(Button).prop('icon')).toEqual(btnIcon);
   });
 });
+
+describe('SignUpForm exposes', () => {
+  describe('a handleSubmit method that', () => {
+    test('is a function', () => {
+      expect(SignUpForm.prototype.handleSubmit).toBeDefined();
+      expect(typeof SignUpForm.prototype.handleSubmit).toEqual('function');
+    });
+  });
+});
