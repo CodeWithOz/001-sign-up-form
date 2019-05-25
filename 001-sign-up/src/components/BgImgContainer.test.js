@@ -33,5 +33,13 @@ describe('BgImgContainer correctly passes', () => {
         wrapper.find(CSSTransitionGroup).prop('transitionEnterTimeout')
       ).toEqual(transitionEnterTimeout);
     });
+
+    test('transitionLeaveTimeout', () => {
+      const transitionLeaveTimeout = 300;
+      const wrapper = shallow(<BgImgContainer />);
+      expect(
+        wrapper.find(CSSTransitionGroup).prop('transitionLeaveTimeout')
+      ).toEqual(transitionLeaveTimeout);
+    });
   });
 });
