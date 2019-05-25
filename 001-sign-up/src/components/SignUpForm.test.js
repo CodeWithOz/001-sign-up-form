@@ -93,6 +93,14 @@ describe('SignUpForm correctly passes', () => {
     const wrapper = shallow(<SignUpForm />);
     expect(wrapper.find(Button).prop('icon')).toEqual(btnIcon);
   });
+
+  test(`its handleSubmit method to its 'form' element`, () => {
+    const wrapper = shallow(<SignUpForm />);
+    const handleSubmitSpy = jest.spyOn(wrapper.instance(), 'handleSubmit');
+    expect(wrapper.find('form').prop('onSubmit')).toBe(handleSubmitSpy);
+
+    handleSubmitSpy.mockRestore();
+  });
 });
 
 describe('SignUpForm exposes', () => {
