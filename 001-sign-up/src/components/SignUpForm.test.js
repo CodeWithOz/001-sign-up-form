@@ -19,7 +19,8 @@ beforeEach(() => {
 });
 
 describe('SignUpForm renders', () => {
-  test('a form element', () => {
+  test('a form element when submitted state is false', () => {
+    wrapper.setState({ submitted: false });
     expect(wrapper.find('form').length).toEqual(1);
   });
 
