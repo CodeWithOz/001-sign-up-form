@@ -49,7 +49,7 @@ export class SignUpForm extends Component {
       <Field name={name} key={index} component={component} />
     ));
 
-    return (
+    return this.state.submitted ? null : (
       <form
         className="SignUpForm"
         onSubmit={this.props.handleSubmit(this.handleSubmit)}
@@ -66,6 +66,4 @@ export default reduxForm({
 })(SignUpForm);
 
 // TODO:
-// 4. render Form or post-submit note based on submitted state
-// 5. style post-submit note
 // 6. add ReactCSSTransitionGroup

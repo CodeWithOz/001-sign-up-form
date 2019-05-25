@@ -26,7 +26,7 @@ describe('SignUpForm renders', () => {
 
   test('nothing when submitted state is true', () => {
     wrapper.setState({ submitted: true });
-    expect(wrapper.exists()).toEqual(false);
+    expect(wrapper.exists('form')).toEqual(false);
   });
 
   describe('a form element containing', () => {
