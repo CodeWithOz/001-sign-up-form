@@ -15,3 +15,15 @@ describe('BgImgContainer renders', () => {
     expect(wrapper.find(CSSTransitionGroup).length).toEqual(1);
   });
 });
+
+describe('BgImgContainer correctly passes', () => {
+  describe('CSSTransitionGroup a prop for', () => {
+    test('transitionName', () => {
+      const transitionName = 'form-submittal';
+      const wrapper = shallow(<BgImgContainer />);
+      expect(wrapper.find(CSSTransitionGroup).prop('transitionName')).toEqual(
+        transitionName
+      );
+    });
+  });
+});
