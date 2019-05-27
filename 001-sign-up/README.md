@@ -33,7 +33,7 @@ Run `npm test`.
 
 This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app) so
-all its cli options are available here.
+all its cli options are available.
 
 ### Building for production
 
