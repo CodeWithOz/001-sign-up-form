@@ -13,11 +13,11 @@ Fullstack React.
 
 ## Developer Setup
 
-Clone the repo and cd into the `001-sign-up` folder:
+Clone the repo and cd into the newly-created `001-sign-up-form` folder:
 
 ```
-git clone https://github.com/CodeWithOz/daily-challenges.git
-cd daily-challenges/001-sign-up/
+git clone https://github.com/CodeWithOz/001-sign-up-form.git
+cd 001-sign-up-form/
 ```
 
 Install dependencies and run the dev server:
